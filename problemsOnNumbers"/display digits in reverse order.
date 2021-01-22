@@ -1,0 +1,40 @@
+//Write a program which accept number from user and display its digits in reverse order.
+
+import java.lang.*;
+import java.util.*;
+
+class Reverse
+{
+	public int iValue;
+	
+	Reverse(int x)
+	{
+		iValue=x;
+	}
+	
+	public void DisplayReverse()
+	{
+		int iDigit=0,iRev=0;
+		while(iValue!=0)
+		{
+			iDigit=iValue%10;
+			iRev=iRev*10+iDigit;
+			
+			iValue=iValue/10;
+		}
+		System.out.println(iRev);
+	}
+}
+class Demo
+{
+	public static void main(String args[])
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter Number");
+		int iValue=sobj.nextInt();
+		
+		Reverse robj=new Reverse(iValue);
+		robj.DisplayReverse();
+	}
+}
