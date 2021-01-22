@@ -13,7 +13,11 @@ class Reverse
 	}
 	
 	public void DisplayReverse()
-	{
+	{        
+                if(iValue<0)
+		{
+			iValue=-iValue;
+		}
 		int iDigit=0,iRev=0;
 		while(iValue!=0)
 		{
