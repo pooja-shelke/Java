@@ -1,0 +1,58 @@
+# Java
+
+//Accept one number and check whether is number is even or odd.
+
+import java.lang.*;
+import java.util.*;
+
+class DemoClass
+{
+	public int iNo;
+	
+	DemoClass(int x)
+	{
+		iNo=x;
+	}
+	
+	public boolean ChkEvnOdd()
+	{
+		int bRet=0;
+		bRet=iNo%2;
+		
+		if(bRet==0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+}
+
+class Demo
+{
+	public static void main(String Args[])
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter number");
+		int iValue=sobj.nextInt();
+		
+		DemoClass obj=new DemoClass(iValue);
+		
+		boolean bResult=obj.ChkEvnOdd();
+		
+		if(bResult==true)
+		{
+			System.out.println("Number is even");
+		}
+		else
+		{
+			System.out.println("Number is odd");
+			
+		}
+		
+	}
+}
