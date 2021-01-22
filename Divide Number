@@ -1,0 +1,50 @@
+# Java
+
+import java.lang.*;
+import java.util.*;
+class Division
+{
+	public int iNo1;
+	public int iNo2;
+	
+	Division()
+	{
+		iNo1=0;
+		iNo2=0;
+	}
+	
+	Division(int x,int y)
+	{
+		iNo1=x;
+		iNo2=y;
+	}
+	
+	public int DivisionNum()
+	{
+		int iAns=0;
+		if((iNo2==0) ||(iNo2>iNo1))
+		{
+			return -1;
+		}
+		iAns=iNo1/iNo2;
+		return iAns;
+	}
+}
+
+class Demo
+{
+	public static void main(String args[])
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter First number");
+		int iValue1=sobj.nextInt();
+		System.out.println("Enter second number");
+		int iValue2=sobj.nextInt();
+		
+		Division obj=new Division(iValue1,iValue2);
+		int iRet=obj.DivisionNum();
+		System.out.println("Divisioin of a two numbers is:"+iRet);
+		
+	}
+}
