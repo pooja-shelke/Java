@@ -1,0 +1,42 @@
+//Write a program which accept number from user and return the count of even digits.
+
+import java.lang.*;
+import java.util.*;
+
+class Demo1
+{
+	public int iNo;
+	
+	Demo1(int iValue)
+	{
+		iNo=iValue;
+	}
+	
+	public int CntEvnDigit()
+	{
+		int iDigit=0,iMult=1;
+		while(iNo!=0)
+		{
+			iDigit=iNo%10;
+			iMult=iMult*iDigit;
+			iNo=iNo/10;
+		}
+		return iMult;
+	}
+	
+}
+class Demo
+{
+	public static void main(String args[])
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter Number");
+		int iValue=sobj.nextInt();
+		
+		Demo1 obj=new Demo1(iValue);
+		int iRet=obj.CntEvnDigit();
+		
+		System.out.print("Multiplicatin of a Digit is:"+iRet);
+	}
+}
