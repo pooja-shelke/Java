@@ -1,0 +1,86 @@
+// Accept N numbers from user and return the difference between largest
+// and smallest number.
+// Input : N : 6
+// Elements : 85 66 3 66 93 88
+// Output : 90 (93 -3)
+
+import java.lang.*;
+
+import java.io.*;
+
+class Demo
+{
+	public int iValue;
+	public int[] arr;
+
+	Demo(int[] Arr,int i)
+	{
+		arr=Arr;
+		iValue=i;
+	}
+
+	public int DifLgstSmLgtNum()
+	{
+		int i=0;
+
+		int iAns1=arr[i];
+		int iAns2=arr[i];
+
+		for(i=0;i<arr.length;i++)
+		{
+			if(arr[i]>iAns1)
+			{
+				iAns1=arr[i];
+
+			}
+			else
+			{
+				iAns1=iAns1;
+
+			}
+		}
+
+		for(i=0;i<arr.length;i++)
+		{
+			if(arr[i]<iAns2)
+			{
+				iAns2=arr[i];
+
+			}
+			else
+			{
+				iAns2=iAns2;
+
+			}
+		}
+		return iAns1-iAns2;
+	}
+
+}
+
+class Program1
+{
+	public static void main(String[] args)throws IOException
+	{
+		InputStreamReader iobj=new InputStreamReader(System.in);
+
+		BufferedReader bobj=new BufferedReader(iobj);
+
+		System.out.println("Enter Size of the array");
+		int iValue=Integer.parseInt(bobj.readLine());
+
+		int[] arr=new int[iValue];
+
+		System.out.println("Enter Elements in the array");
+
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=Integer.parseInt(bobj.readLine());
+		}
+
+		Demo obj=new Demo(arr,iValue);
+		int iRet=obj.DifLgstSmLgtNum();
+
+		System.out.println(iRet);
+	}
+}
