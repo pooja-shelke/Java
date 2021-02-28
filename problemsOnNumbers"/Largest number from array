@@ -1,0 +1,72 @@
+//Accept N numbers from user and return the largest number.
+// Input : N : 6
+// Elements : 85 66 3 66 93 88
+// Output : 93
+
+import java.lang.*;
+import java.io.*;
+
+class Demo
+{
+	public int iValue;
+	public int[] arr;
+	
+
+	Demo(int[] Arr,int i)
+	{
+		arr=Arr;
+		iValue=i;
+
+	}
+
+	public int LgstNum()
+	{
+		int i=0;
+
+		int iAns=arr[i];
+
+	
+		for(i=0;i<arr.length;i++)
+		{
+			if(arr[i]>iAns)
+			{
+				iAns=arr[i];
+				
+			}
+			else
+			{
+				iAns=iAns;
+			}
+		}
+
+		return iAns;
+	}
+}
+
+class Program1
+{
+	public static void main(String[] args)throws IOException
+	{
+         InputStreamReader iobj=new InputStreamReader(System.in);
+
+         BufferedReader bobj=new BufferedReader(iobj);
+
+         System.out.println("Enter number os size");
+         int iValue=Integer.parseInt(bobj.readLine());
+
+         int[] arr=new int[iValue];
+
+
+         System.out.println("Enter Elements in the array");
+
+         for(int i=0;i<arr.length;i++)
+         {
+         	arr[i]=Integer.parseInt(bobj.readLine());
+
+         }
+
+         Demo obj=new Demo(arr,iValue);
+         int iret=obj.LgstNum();
+         System.out.println("largest number from array is:"+iret);
+	}
+}
