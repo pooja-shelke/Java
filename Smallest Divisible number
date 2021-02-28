@@ -1,0 +1,51 @@
+# Java
+
+//Find Samllest Divisible number .
+//input :12
+//output:1 2 3 4
+
+import java.lang.*;
+
+import java.io.*;
+
+class Demo
+{
+	public int iValue;
+
+	Demo(int x)
+	{
+      iValue=x;
+	}
+
+	public void SmlNum()
+	{
+		int i=0;
+
+		for(i=1;i<iValue/2;i++)
+		{
+            if(iValue%i==0)
+            {
+            	 System.out.println(i);
+            }
+		}
+	}
+
+}
+
+class Program1
+{
+	public static void main(String[] args)throws IOException
+	{
+		InputStreamReader iobj=new InputStreamReader(System.in);
+
+		BufferedReader bobj=new BufferedReader(iobj);
+
+		System.out.println("Enter Number");
+		int iValue=Integer.parseInt(bobj.readLine());
+
+		Demo obj=new Demo(iValue);
+		obj.SmlNum();
+
+	}
+		
+}
