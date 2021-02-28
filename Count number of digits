@@ -1,0 +1,60 @@
+# Java
+
+/*
+Problem statement :
+Accept number from user and return the number of digits from that numvber.
+
+ Input : 1278   Output : 4
+ Input : 127    Output : 3
+ Input : 27   Output : 2
+ Input : 2   Output : 1
+ Input : -56    Output : 2
+ Input : 0      Output : 0
+ Input : 1005   Output : 4
+ */
+import java.lang.*;
+
+import java.util.*;
+
+class Demo
+{
+    public int iValue;
+
+    Demo(int i)
+    {
+        iValue=i;
+
+    }
+
+    public int CntDigit()
+    {
+        int iDigit=0,iCnt=0;
+
+        while(iValue!=0)
+        {
+            iDigit=iValue%10;
+            iCnt++;
+            iValue=iValue/10;
+        }
+        return iCnt;
+    }
+
+}
+
+class Program1
+{
+    public static void main(String [] args)
+    {
+        Scanner sobj=new Scanner(System.in);
+
+        System.out.println("Enter Number");
+        int iValue=sobj.nextInt();
+
+        Demo obj=new Demo(iValue);
+
+        int iRet=obj.CntDigit();
+
+        System.out.println("Number of character is:"+iRet);
+
+    }
+}
