@@ -1,0 +1,75 @@
+// Accept N numbers from user and accept one another number as NO ,
+// return index of First occurrence of that NO.
+// Input : N : 6
+// NO: 66
+// Elements : 85 66 3 66 93 88
+// Output : 1
+
+import java.lang.*;
+
+import java.io.*;
+
+class Demo
+{
+	public int iValue1,iValue2;
+
+	public int[] arr;
+
+	Demo(int[] Arr,int i,int j)
+	{
+		arr=Arr;
+		iValue1=i;
+		iValue2=j;
+	}
+
+	public int FirstOccurence()
+	{
+		 int iCnt=0;
+		 int iAns=0;
+
+		for(int i=0;i<arr.length;i++)
+		{
+		   if(iValue2==arr[i])
+		   {
+		   	iAns=i;
+		   	break;
+		   }
+		}
+		return iAns;
+	}
+
+}
+
+class Program1
+{
+	public static void main(String[] args)throws IOException
+	{
+		InputStreamReader iobj=new InputStreamReader(System.in);
+
+		BufferedReader bobj=new BufferedReader(iobj);
+
+		System.out.println("Enter Size of the array");
+
+		int iValue1=Integer.parseInt(bobj.readLine());
+
+		int[] arr=new int[iValue1];
+
+		System.out.println("Enter Elements into the array");
+
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=Integer.parseInt(bobj.readLine());
+		}
+
+		System.out.println("Enter Elements of the array that you want to serach");
+
+		int iValue2=Integer.parseInt(bobj.readLine());
+
+		Demo obj=new Demo(arr,iValue1,iValue2);
+		int iRet=obj.FirstOccurence();
+
+		System.out.println("First occurrence of a No is:"+iRet);
+	}
+
+}
+
