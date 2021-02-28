@@ -1,0 +1,83 @@
+
+
+/*
+    Accept N numbers from user and diplsay addition of digits of each number separately
+ */
+
+/*
+    Input :
+    N : 5
+    Array :     152     4545    -56      5       78
+    Output :    8           18      11      5       15
+ 
+ */
+
+import java.lang.*;
+import java.util.*;
+
+class Demo
+{
+
+    public int iValue;
+    public int[] arr;
+
+    Demo(int[] Arr,int iNo)
+    {
+        arr=Arr;
+        iValue=iNo;
+    }
+
+    public void Addition()
+    {
+        int iDigit=0;
+        int iSum=0;
+        if(iValue<0)
+        {
+            iValue=-iValue;
+        }
+
+        for(int i=0;i<arr.length;i++)
+        {
+            iSum=0;
+            if(arr[i]<0)
+             {
+               arr[i]=-arr[i];
+             }
+            while(arr[i]!=0)
+            {
+                iDigit=arr[i]%10;
+                iSum=iSum+iDigit;
+                arr[i]=arr[i]/10;
+            }
+            System.out.println(iSum);
+
+        }
+        
+    }
+
+}   
+
+class Program1
+{
+    public static void main(String[] args)
+    {
+        Scanner sobj=new Scanner(System.in);
+
+        System.out.println("Enter size of the array ");
+        int iValue=sobj.nextInt();
+
+        int[] arr=new int[iValue];
+
+        System.out.println("Enter elements into the array");
+
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=sobj.nextInt();
+        
+        }
+        Demo obj=new Demo(arr,iValue);
+        obj.Addition();
+} 
+
+}
+
