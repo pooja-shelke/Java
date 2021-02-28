@@ -1,0 +1,93 @@
+# Java
+
+/*
+Problem statement :
+Accept number from user and check whether number is pallindrome or not. 
+ 
+1. Input : 1278  
+Output : FALSE
+
+2. Input : 121  
+ Output : TRUE
+
+3. Input : 272  
+  Output : TRUE
+
+4.Input : 202  
+ Output : TRUE
+
+5. Input : -56  
+  Output : FALSE
+ */
+
+
+import java.lang.*;
+
+import java.util.*;
+
+class Demo
+{
+    public int iValue;
+
+    Demo(int i)
+    {
+    iValue=i;
+    }
+
+    public boolean ChkPerfectNum()
+    {
+        int iDigit=0;
+        int iRev=0;
+        if(iValue<0)
+        {
+            iValue=-iValue;
+        }
+
+        int iOriginal=iValue;
+
+        while(iValue!=0)
+        {
+            iDigit=iValue%10;
+           
+            iRev=iRev*10+iDigit;
+            
+            iValue=iValue/10;
+        }
+
+        if(iOriginal==iRev)
+        {
+            return true;
+        }
+        else
+
+        {
+            return false;
+        }
+    
+    }
+
+}
+
+class Program1
+{
+    public static void main(String[] args)
+    {
+        Scanner sobj=new Scanner(System.in);
+
+        System.out.println("Enter Number");
+        int iValue=sobj.nextInt();
+
+        Demo obj=new Demo(iValue);
+        boolean iRet=obj.ChkPerfectNum();
+
+        if(iRet==true)
+        {
+            System.out.println("Number is pallindrome");
+        }
+
+        else
+        {
+           System.out.println("Number is not pallindrome");  
+        }  
+    }
+}
