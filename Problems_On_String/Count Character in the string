@@ -1,0 +1,53 @@
+//Count Character into the string
+
+import java.lang.*;
+
+import java.io.*;
+
+class Demo
+{
+
+	public String str1; 
+
+
+	Demo(String string)
+	{
+		str1=string;
+
+	}
+
+	public int CntChar()
+	{
+		int iCnt=0;
+
+		for(int i=0;i<str1.length();i++)
+		{
+			iCnt++;
+
+		}
+		return iCnt;
+
+
+	
+	}
+
+}
+
+class Program1
+{
+	public static void main(String[] args)throws IOException
+	{
+		InputStreamReader iobj=new InputStreamReader(System.in);
+
+		BufferedReader bobj=new BufferedReader(iobj);
+
+		System.out.println("Enter String");
+		String str=bobj.readLine(); 
+
+		Demo obj=new Demo(str);
+
+		int iRet=obj.CntChar();
+
+		System.out.println(iRet);
+	}
+}
