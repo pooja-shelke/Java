@@ -1,0 +1,51 @@
+# Java
+
+//Accept character from user and check eather that character is capital or not.
+
+import java.lang.*;
+import java.util.*;
+
+class Demo
+{
+	public char cValue;
+
+	Demo(char ch)
+	{
+		cValue=ch; 
+	}
+
+	public boolean ChkCapital()
+	{
+		if((cValue>='A')&&(cValue<='Z'))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+class LB1
+{
+	public static void main(String [] args)
+	{
+		Scanner sobj=new Scanner(System.in);
+
+		System.out.println("Enter Character ");
+		char cValue=sobj.next().charAt(0);
+
+		Demo obj=new Demo(cValue);
+
+		boolean  bRet=obj.ChkCapital();
+
+		if(bRet==true)
+		{
+			System.out.println("Character is capital");
+		}
+		else
+		{
+			System.out.println("Character is not capital");
+		}
+	}
+}
