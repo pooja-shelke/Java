@@ -1,0 +1,99 @@
+//Using RequestDispatcher we calling one servlet from another servlet
+
+_______________________HTML FILE________________________________________________________
+<!DOCTYPE html>
+<html>
+<body>
+     <form action="add" method="get">
+     Enter first Number:<input type="text" name="num1"><br><br>
+     Enter first Number:<input type="text" name="num2"><br><br>
+  
+     <input type="submit">
+     </form>
+</body>
+</html>
+
+___________________________ADDITION FILE(JAVA)____________________________________________
+package OwnPack;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+
+public class Addservlet extends HttpServlet
+{
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException,NumberFormatException
+	{
+		// TODO Auto-generated method stub
+		int iValue1=Integer.parseInt(req.getParameter("num1"));
+		int iValue2=Integer.parseInt(req.getParameter("num2"));
+		
+		int iRet=iValue1+iValue2;
+		
+		req.setAttribute("iRet", iRet);
+		  
+		RequestDispatcher rd=req.getRequestDispatcher("sq");
+		rd.forward(req, res);		
+	}
+}
+_________________________________SQUARE FILE(JAVA)_____________________________________________
+
+
+package OwnPack;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+
+public class SqServlet1 extends HttpServlet {
+	
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException,NumberFormatException
+	{
+  
+		int iRet=(int)req.getAttribute("iRet");
+		
+		iRet=iRet*iRet;
+		
+		PrintWriter out=res.getWriter();
+		out.println(iRet);
+	
+	}
+}
+
+_______________________WEB XML FILE________________________________________________________________
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+ 
+<servlet>
+<servlet-name>xyz</servlet-name>
+<servlet-class>OwnPack.Addservlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>xyz</servlet-name>
+<url-pattern>/add</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<servlet-name>abc</servlet-name>
+<servlet-class>OwnPack.SqServlet1</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>abc</servlet-name>
+<url-pattern>/sq</url-pattern>
+</servlet-mapping>
+
+</web-app>
