@@ -1,0 +1,62 @@
+# Java
+
+import java.util.Scanner;
+
+class MainClass
+{
+	void MinMax(int array[])
+	{
+		int i=0;
+		int min=0,max=0;
+		min=array[i];
+		max=array[i];
+		
+		for(i=0;i<array.length;i++)
+		{
+			if(array[i]<min )
+			{
+				min=array[i];
+			}
+			else
+			{
+				min=min;
+			}
+			
+			if(array[i]>max )
+			{
+				max=array[i];
+			}
+			else
+			{
+				max=max;
+			}
+		}
+		System.out.println("Min:"+min);
+		System.out.println("Max:"+max);
+		
+	}
+}
+
+public class Program2 {
+
+	public static void main(String[] args)
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter Size of Array");
+		int iSize=sobj.nextInt();
+		
+		int[] array=new int[iSize];
+		
+		System.out.println("Enter Elements in the Array");
+		for(int i=0;i<array.length;i++)
+		{
+			array[i]=sobj.nextInt();
+		}
+		
+		MainClass m=new MainClass();
+		m.MinMax(array);
+
+	}
+
+}
