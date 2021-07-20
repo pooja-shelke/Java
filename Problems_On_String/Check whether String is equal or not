@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class StringCompare {
+
+	public static void main(String[] args)
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter First String");
+		String str1=sobj.nextLine();
+		
+		System.out.println("Enter Second String");
+		String str2=sobj.nextLine();
+		
+	 	boolean bRet= CompareString(str1,str2);
+	 	
+	 	if(bRet==true)
+	 	{
+	 		System.out.println("Both String Are equals");
+	 		
+	 	}
+	 	else
+	 	{
+	 		System.out.println("Both String Are not equals");
+		 	
+	 	}
+	
+	}
+
+	private static boolean CompareString(String str1, String str2) 
+	{
+		boolean bRet=false;
+		
+		 for(int i=0;i<str1.length();i++)
+		 {
+			if(str1.charAt(i)!=str2.charAt(i))
+			{
+				bRet=false;
+			}
+			else
+			{
+				bRet=true;
+			}
+		 }
+		 
+		 return bRet;
+	}
+
+}
