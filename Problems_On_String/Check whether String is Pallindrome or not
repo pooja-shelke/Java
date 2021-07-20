@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class CheckPalindrome {
+
+	public static void main(String[] args)
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter First String");
+		String str1=sobj.nextLine();
+		
+	
+        boolean Ret=ChkPalinString(str1);
+	 	
+	 	if(Ret==true)
+	 	{
+	 		System.out.println(" String is Pallindrorme");
+	 	}
+	 	else
+	 	{
+	 		System.out.println(" String is not Pallindrorme");
+	 	}
+	
+
+	}
+
+	private static boolean ChkPalinString(String str1) 
+	{
+		
+		boolean eq=false;
+		String Rev="";
+		 for(int i=str1.length()-1;i>=0;i--)
+		 {
+			 
+			Rev=Rev+str1.charAt(i);
+		 }
+		 
+		 for(int i=Rev.length()-1;i>=0;i--)
+		 {
+			 if(str1.charAt(i)==Rev.charAt(i))
+			 {
+				 eq=true;
+			 }
+			 else
+			 {
+				 eq=false;
+			 }
+		
+		 }
+	 
+		return eq; 
+	}
+
+}
