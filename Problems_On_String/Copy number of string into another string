@@ -1,0 +1,63 @@
+Write a program which accept string from user and copy the
+contents of that string into another string. (Implement strncpy()
+function)
+
+Input : “Marvellous Multi OS”
+10
+
+Output : “Marvellous
+
+Note : If third parameter is greater than the size of source string then
+copy whole string into destination.
+
+
+import java.util.Scanner;
+
+public class StringCopy {
+
+	public static void main(String[] args)
+	{
+	 Scanner sobj=new Scanner(System.in);
+	 
+	 System.out.println("Enter String");
+	 String str=sobj.nextLine();
+	 
+	 System.out.println("Enter Number");
+	 int value=sobj.nextInt();
+	 
+	 StrNCpy(str,value);
+	 
+
+	}
+
+	private static void StrNCpy(String str, int value) 
+	{
+		String str2="";
+		int iCnt=0;
+		for(int i=0;i<str.length();i++)
+		{
+			iCnt++;
+		}
+		
+		
+		if(value>iCnt)
+		   {
+			   for(int i=0;i<str.length();i++)
+			   {
+				   str2=str2+str.charAt(i);
+			   }
+		   }
+		else
+		{
+		
+	   for(int i=0;i<value;i++)
+	   {
+		   str2=str2+str.charAt(i);
+	   }
+	   
+		}
+		
+	   System.out.println(str2);
+	}
+
+}
