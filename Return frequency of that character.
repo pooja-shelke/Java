@@ -1,0 +1,41 @@
+Write a program which accept string from user and accept one
+character. Return frequency of that character.
+
+
+
+import java.util.Scanner;
+
+public class SubStrinDemo {
+
+	public static void main(String[] args) 
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter String");
+		String string=sobj.nextLine();
+		
+		System.out.println("Enter character");
+		char ch = sobj. next(). charAt(0);
+		
+		int bRet=Chkcharacter(string,ch);
+		
+		System.out.println(bRet);
+		
+		
+	}
+
+	private static int Chkcharacter(String string, char ch) 
+	{
+		int iCnt=0;
+		for(int i=0;i<string.length();i++)
+		{
+			if(string.charAt(i)==ch)
+			{
+				iCnt++;
+			}
+			
+		}
+		return iCnt;
+		
+	}
+}
