@@ -1,0 +1,41 @@
+Write a program which accept string from user and copy capital
+characters of that string into another string.
+
+Input : “Marvellous Multi OS”
+
+Output : “MMOS”
+
+
+import java.util.Scanner;
+
+public class StrCpyCap {
+
+	public static void main(String[] args)
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter String");
+		String str=sobj.nextLine();
+		
+		StrCpy(str);
+		
+
+	}
+
+	private static void StrCpy(String str) 
+	{
+		String str2="";
+		
+	   for(int i=0;i<str.length();i++)
+	   {
+		   if(str.charAt(i)>='A'  && str.charAt(i)<='Z')
+		   {
+			   str2=str2+str.charAt(i);
+		   }
+	   }
+	   
+	   System.out.println(str2);
+		
+	}
+
+}
