@@ -1,0 +1,52 @@
+Write a program which accept string from user and accept one
+character. Return index of first occurrence of that character.
+
+//1.Write a program which accept string from user and accept one
+//character. Check whether that character is present in string or not.
+
+
+import java.util.Scanner;
+
+public class SubStrinDemo {
+
+	public static void main(String[] args) 
+	{
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Enter String");
+		String string=sobj.nextLine();
+		
+		System.out.println("Enter character");
+		char ch = sobj. next(). charAt(0);
+		
+		int bRet=Chkcharacter(string,ch);
+		
+		System.out.println("First Occurence is:"+bRet);	
+	}
+
+	private static int Chkcharacter(String string, char ch) 
+	{
+		int iCnt=0;
+		for(int i=0;i<string.length();i++)
+		{
+			if(string.charAt(i)==ch)
+			{
+				iCnt=i;
+				break;
+			}
+			
+		}
+	
+		
+		if(iCnt>0)
+		{
+			return iCnt;
+			
+		}
+		else
+		{
+			return -1;
+		}
+		
+	}
+}
