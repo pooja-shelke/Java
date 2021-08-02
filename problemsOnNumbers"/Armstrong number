@@ -1,0 +1,56 @@
+//Check whether number is armstrong or not.
+
+import java.util.*;
+
+class Demo
+{
+    public boolean ArmStrongNum(int iValue)
+    {
+        int Digit=0;
+        int cube=0;
+        int Sum=0;
+        int Store=iValue;
+        while(iValue!=0)
+        {
+            Digit=iValue%10;
+            cube=Digit*Digit*Digit;
+            Sum=Sum+cube;
+            iValue=iValue/10;
+        }
+         
+       if(Sum==Store)
+       {
+          return true;
+           
+       }
+       else
+       {
+        return false;
+       }
+        
+    }
+}
+
+
+class HelloWorld
+{
+    public static void main(String[] args)
+    {
+      Scanner sobj=new Scanner(System.in);
+        
+        System.out.println("Enter number");
+        int iValue=sobj.nextInt();
+        Demo obj=new Demo();
+        boolean ret=obj. ArmStrongNum(iValue);
+        
+        if(ret==true)
+        {
+            System.out.println("Number is armstrong");
+        }
+        else
+        {
+            System.out.println("Number is not armstrong");
+        }
+     
+    }
+}
