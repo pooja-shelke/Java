@@ -1,0 +1,24 @@
+Print ASCII Value Coresponding to Chracter.
+
+
+import java.util.Scanner;
+
+public class ASCIIValueForChar {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner sobj=new Scanner(System.in);
+		
+		System.out.println("Please Enter Your Character");
+		char ch=sobj.next().charAt(0);  
+		
+		if(ch>='a' && ch<= 'z'|| ch>='A' && ch<='Z')
+		{
+			System.out.println("Your ASCII Value Coresponding to Chracter is:"+(int)ch);
+			
+		}
+		
+	}
+
+}
